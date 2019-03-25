@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.dao.LoginDao">
+
+    <select id="getUser" parameterType="String" resultType="com.example.vo.LoginUserVo">
+        <![CDATA[
+        SELECT * 
+        FROM USER 
+        WHERE USER_ID = #{userId}
+        ]]>
+    </select>
+
+    <select id="getAuthority" parameterType="String" resultType="org.springframework.security.core.authority.SimpleGrantedAuthority">
+        <![CDATA[
+        SELECT AUTHORITY AS ROLE 
+        FROM AUTHORITY 
+        WHERE USER_ID = #{userId}
+        ]]>
+    </select>
+</mapper>
