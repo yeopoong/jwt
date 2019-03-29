@@ -44,6 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/promotions/**")
             .antMatchers("/news/**")
             .antMatchers("/users/**")
+            .antMatchers("/api/upload/**")
             ;
     }
      
